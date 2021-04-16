@@ -12,9 +12,9 @@ const Create = () => {
   const fileInput = useRef(null);
   const forceUpdate = useForceUpdate();
   const handleSubmit = (e) => {
-
+    e.preventDefault();
     var formData = new FormData();
-    formData.append('imageUrl', fileInput.current.files);
+    formData.append('imageUrl', fileInput.current.files[0]);
     formData.append('title',title);
     formData.append('descriprion', description);
 
