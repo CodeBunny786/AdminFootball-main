@@ -14,11 +14,10 @@ const Create = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     var formData = new FormData();
-    formData.append('imageUrl', fileInput.current.files[0]);
+    formData.append('file', fileInput.current.files[0]);
     formData.append('title',title);
     formData.append('descriprion', description);
-
-    // console.log(formData);
+    
     console.log('new data added' + JSON.stringify(formData));
     axios({
       method: 'post',
