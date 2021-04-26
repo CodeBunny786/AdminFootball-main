@@ -14,23 +14,33 @@ const Create = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     var formData = new FormData();
-    formData.append('file', fileInput.current.files[0]);
+//                       
+
+// data.append("file", fileInput.files[0], "1618849513210.jpeg");
+    formData.append('file', fileInput.current.files[0],fileNames());
     formData.append('title',title);
     formData.append('descriprion', description);
-    
+    formData.append("urlToImage", "me trying");
+    formData.append("content", "asdas");
     console.log('new data added' + JSON.stringify(formData));
     axios({
       method: 'post',
+      mode: 'no-cors',
       url: 'https://scorefootball.herokuapp.com/insert/post',
       data: formData,
       headers: {'Content-Type': 'multipart/form-data' }
+      // headers: { 
+      //   ...data.getHeaders()
+      // },
       })
       .then(function (response) {
         console.log('succes')
+        alert(JSON.stringify(response))
           //handle success
       })
       .catch(function (response) {
         console.log('error')
+        alert(JSON.stringify(response))
           //handle error
           console.log(response)
       });
@@ -42,6 +52,19 @@ const Create = () => {
 
     //   console.log('new data added');
     // })
+//     fetch('http://192.168.10.108:5000', {
+//   method: 'POST',
+//   body: formData
+// })
+// .then(response => response.json())
+// .then(result => {
+//  alert('Success:', result)
+//   console.log('Success:', result);
+// })
+// .catch(error => {
+//   alert('fail:', error)
+//   console.error('Error:', error);
+// });
   }
 
   useEffect(e => {
