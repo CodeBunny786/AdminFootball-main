@@ -19,7 +19,7 @@ const Create = () => {
 // data.append("file", fileInput.files[0], "1618849513210.jpeg");
     formData.append('file', fileInput.current.files[0],fileNames());
     formData.append('title',title);
-    formData.append('descriprion', description);
+    formData.append('description', description);
     formData.append("urlToImage", "me trying");
     formData.append("content", "asdas");
     console.log('new data added' + JSON.stringify(formData));
