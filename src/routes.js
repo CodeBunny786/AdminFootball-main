@@ -57,15 +57,6 @@ const dashboardRoutes = [
     component: addForm,
     layout: "/admin"
   },
-
-  // {
-  //   path: "/user",
-  //   name: "User Profile",
-  //   rtlName: "ملف تعريفي للمستخدم",
-  //   icon: Person,
-  //   component: UserProfile,
-  //   layout: "/admin"
-  // },
   {
     path: "/table",
     name: "AddNews",
@@ -73,8 +64,6 @@ const dashboardRoutes = [
     icon: NewReleases,
     component: AddNews,
     layout: "/admin"
-
-  
   },
   {
     path: "/table",
@@ -84,10 +73,6 @@ const dashboardRoutes = [
     component: TableList,
     layout: "/admin"
   },
-
-
-
-
   {
     path: "/typography",
     name: "Typography",
